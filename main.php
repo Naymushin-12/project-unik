@@ -2,7 +2,7 @@
 <html lang="ru">
 <?php
 session_start();
-require_once 'auth.php';
+require 'auth.php';
 checkAuth();
 ?>
 <head>

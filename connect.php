@@ -35,20 +35,20 @@ function connectDB() {
 
 // Функция для инициализации сессии
 function initSession() {
-    session_name(SESSION_NAME);
-    
-    session_set_cookie_params([
-        'lifetime' => SESSION_LIFETIME,
-        'path' => '/',
-        'domain' => $_SERVER['HTTP_HOST'],
-        'secure' => isset($_SERVER['HTTPS']),
-        'httponly' => true,
-        'samesite' => 'Strict'
-    ]);
-    
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
+        session_name(SESSION_NAME);
+        session_set_cookie_params([
+            'lifetime' => SESSION_LIFETIME,
+            'path' => '/',
+            'domain' => $_SERVER['HTTP_HOST'],
+            'secure' => isset($_SERVER['HTTPS']),
+            'httponly' => true,
+            'samesite' => 'Strict'
+        ]);
     }
+    
+    
     
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
         session_unset();
@@ -60,10 +60,6 @@ function initSession() {
 
 // Инициализируем сессию
 initSession();
-
-// Дополнительные настройки
-date_default_timezone_set('Europe/Moscow');
-mb_internal_encoding('UTF-8');
 
 // Функция для безопасного вывода данных
 function safeOutput($data) {

@@ -1,5 +1,5 @@
 <?php
-require_once 'connect.php'; 
+require 'connect.php'; 
 
 class Auth {
     private $conn;
