@@ -1,0 +1,521 @@
+/* Основные стили из main.html */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    background: #e0e0e0;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: background 0.3s;
+    font-size: 18px;
+}
+
+.sidebar-item:hover {
+    background-color: #ddd;
+}
+
+.sidebar-item.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.content {
+    padding: 40px;
+    flex-grow: 1;
+    position: relative;
+}
+
+.top-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-icons .icon {
+    font-size: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Стили для страницы опросов */
+.poll-section {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.poll-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.poll-list-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.poll-title {
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.poll-date {
+    color: #666;
+    font-size: 14px;
+    margin: 0 15px;
+}
+
+.take-poll-btn {
+    padding: 8px 15px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.take-poll-btn:hover {
+    background-color: #0b7dda;
+}
+
+.delete-poll-btn {
+    background: none;
+    border: none;
+    color: #ff4444;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.create-btn, .save-btn, .submit-poll-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.create-btn:hover, .save-btn:hover, .submit-poll-btn:hover {
+    background-color: #45a049;
+}
+
+.cancel-btn, .back-to-polls-btn {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.cancel-btn:hover, .back-to-polls-btn:hover {
+    background-color: #d32f2f;
+}
+
+.poll-form {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.poll-input, .question-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.question-item {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.question-input {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.remove-question-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.add-btn {
+    padding: 8px 15px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-btn:hover {
+    background-color: #0b7dda;
+}
+
+.answer-options {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.answer-options ul {
+    list-style: none;
+    padding: 0;
+}
+
+.answer-options li {
+    padding: 5px 0;
+}
+
+.poll-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Стили для прохождения опроса */
+.poll-question {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.poll-options {
+    margin-top: 10px;
+}
+
+.poll-option {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.poll-option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.poll-option label {
+    cursor: pointer;
+}
+
+.other-answer-input {
+    margin-left: 25px;
+    margin-top: 5px;
+    padding: 8px;
+    width: calc(100% - 25px);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+/* Стили для страницы результатов */
+.results-container {
+    margin-top: 20px;
+}
+
+.poll-result-section {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.poll-result-section h2 {
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+
+.results-list {
+    margin-top: 15px;
+}
+
+.result-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.result-item h3 {
+    color: #444;
+    margin-top: 0;
+}
+
+.answers-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.answer-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.answer-item:last-child {
+    border-bottom: none;
+}
+
+.question-text {
+    font-weight: bold;
+    color: #333;
+}
+
+.answer-text {
+    color: #666;
+    max-width: 60%;
+    text-align: right;
+}
+/* Стили для уведомлений */
+.notification-badge {
+    display: none;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+.notifications-list {
+    margin-top: 20px;
+}
+
+.notification-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.notification-item.unread {
+    background-color: #f0f8ff;
+    border-left: 3px solid #2196F3;
+}
+
+.notification-item:hover {
+    background-color: #f5f5f5;
+}
+
+.notification-icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-text {
+    margin: 0;
+    color: #333;
+}
+
+.notification-date {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+}
+.no-results-message {
+    text-align: center;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.no-results-message p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.no-results-message a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.no-results-message a:hover {
+    text-decoration: underline;
+}
+/* Стили для страницы сообщения об ошибке */
+.report-section {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.cancel-btn {
+    padding: 12px 25px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 15px;
+    transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+    background-color: #d32f2f;
+}
+/* Добавьте эти стили в конец файла */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.alert.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+
+.alert.error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
